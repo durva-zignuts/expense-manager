@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <a class="navbar-brand" href="/dashboard/<%= userId %>">Dashboard</a>
+
+        </ul>
+
+        <div class="dropdown ">
+            <img src="/images/photo.jpg" class="rounded-circle shadow-4 dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"  style="width: 40px;"
+            alt="Avatar"  />
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="/viewProfile/<%= userId %>">My Profile</a></li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="container-xl table-container">
+    <div class="table-responsive table-start">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row table-row">
+                    <div class="col-sm-6">
+                        <h2> View All Users </h2>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Users</th>
+                        
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <% user.forEach(function(user) { %>
+                    </tr>
+                        <td><%= user.email %></td>
+                    <tr>
+                        <% }) %>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

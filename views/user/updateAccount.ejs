@@ -1,0 +1,40 @@
+<body class="addAccount">
+    
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="/dashboard/<%= loggedInUserId %>">Dashboard</a>
+            </ul>
+    
+            <div class="dropdown ">
+                <img src="/images/photo.jpg" class="rounded-circle shadow-4 dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"  style="width: 40px;"
+                alt="Avatar"  />
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="/viewProfile/<%= loggedInUserId %>">My Profile</a></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+            </div>
+    
+        </div>
+    </nav>
+    
+   
+    <div class="container form-size">
+    <div class="form-title">
+        <h2 class="AccountHead">Update Account</h2>
+    </div>
+    <form class="form-id">
+        <div class="form-group accountForm">
+            <label for="usr">Account:</label>
+            <input name="accountName" type="text" class="form-control" minlength="3" maxlength="15" id="accountName" value="<%= account.accountName %>" required>
+        </div>
+
+        <br>
+        <button type="button" class="btn btn-primary account" style="width:90px;" data-id="<%= account.id %>" >Update</button>
+        
+    </form>
+</div>
+
+    
+    </body>

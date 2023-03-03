@@ -1,0 +1,105 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+          <a class="navbar-brand" href="/dashboard/<%= _id %>">Dashboard</a>
+          <a class="navbar-brand" href="/addAccount">Add Accounts</a>
+        </ul>
+<!-- <img src="/images/photo.jpg" alt="image"> https://mdbcdn.b-cdn.net/img/new/avatars/1.webp -->
+        <div class="dropdown ">
+            <img src="/images/photo.jpg" class="rounded-circle shadow-4 dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"  style="width: 40px;"
+            alt="Avatar"  />
+        <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/viewProfile/<%= _id %>">My Profile</a></li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div class="container-xl table-container">
+  <div class="table-responsive table-start">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row table-row">
+                  <div class="col-sm-6">
+                      <h2> View All Accounts </h2><%= account.id %>
+                      <br><br>
+                  </div>
+              </div>
+          </div>
+          <table class="table table-hover">
+              <thead>
+                  <tr>
+                      <th colspan="3" class="heading1">Accounts</th>
+                      <th colspan="2">Users</th>
+                      <th colspan="2">Transactions</th>
+                  </tr>
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                                    
+                    <th>Add</th>
+                    <th>View</th>
+                       
+                    <th>Add</th>
+                    <th>View</th>
+                  </tr>
+              </thead>
+              
+              <tbody>
+                  <tr>
+                      <% account.forEach(function(account) { %>
+                  </tr>
+                      <td><%= account.accountName %></td>
+                      
+                      <td>
+                          <a href="/updateAccount/<%= account.id %>" class="btn btn-warning update-btn" role="button">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                           
+                          </a>
+                          
+                      </td>
+
+                      <td>
+                        <button type="button" class="btn btn-danger delete" data-id="<%= account.id %>">
+                          <i class="fa-solid fa-trash"></i>
+                        
+                        </button>
+                      </td>
+                      <td>
+                        <a href="/addUser/<%= account.id %>" class="btn btn-primary update-btn" role="button">
+                          <i class="fa-solid fa-user-plus"></i>
+                          <!-- add User -->
+                        </a>
+                    </td>
+                    <td>
+                      <a href="/viewUsers/<%= account.id %>" class="btn btn-info update-btn" role="button">
+                        <i class="fa-solid fa-user"></i>
+                        <!-- view User -->
+                      </a>
+                    </td>
+                    <td>
+                      <a href="/addTransaction/<%= account.id %>" class="btn btn-primary update-btn" role="button">
+                        <i class="fa-solid fa-file-circle-plus"></i>
+                        <!-- Add Transaction -->
+                      </a>
+                    </td>
+                    <td>
+                      <a href="/viewTransaction/<%= account.id %>" class="btn btn-info update-btn" role="button" >
+                        <i class="fa-solid fa-file"></i>
+                        <!-- view Transactions -->
+                      </a>
+                    </td>
+                  <tr>
+                      <% }) %>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+

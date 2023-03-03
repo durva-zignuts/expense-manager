@@ -1,0 +1,60 @@
+
+<body class="centerform" >
+  
+  <div class="container p-3">
+    <% if (err !== null) { %>
+      <% if (err !==  '') { %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong><%= err %></strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% } %>
+    <% } %>
+  </div>
+
+  <div class="container mb-3 text-center">
+    <a href="/login">Login</a> | <a href="/signup">Signup</a>
+  </div>
+
+  <div class="card" style="height: 28rem; ">
+  <div class="container mt-4 ">
+    <h1 class="login-form">Signup Form</h1>
+    <form action="/signup" method="POST" class="row">
+
+      <div class="mb-3  mt-4 ">
+        <label for="name" class="col-form-label">Name</label>
+        <div class="col-sm-12">
+          <input name="name" type="text" class="form-control" id="name" required />
+        </div>
+      </div>
+
+      <div class="mb-3 ">
+          <label for="email" class="col-form-label">Email</label>
+          <div class="col-sm-12">
+            <input name="email" type="email" class="form-control" id="email" required />
+          </div>
+      </div>
+
+      <div class="mb-3 ">
+          <label for="inputPassword" class="col col-form-label">Password</label>
+          <div class="col-sm-12">
+            <input name="password" type="password" class="form-control" id="password" required />
+          </div>
+      </div>
+      
+      &nbsp; &nbsp; 
+      
+      <button type="submit" class="btn btn-primary" style="width:90px;">Login</button>
+    </form>
+
+  </div>
+
+</div>
+
+<div class="container p-3">
+  Note : Password Must be 8 characters long & must include letter & number
+</div>
+
+
+</body>
+
